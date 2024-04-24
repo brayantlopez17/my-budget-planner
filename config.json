@@ -1,0 +1,34 @@
+{
+  "income": 7100,
+  "fixed expenses": {
+    "rent": 550,
+    "car": 256,
+    "giving": 1270,
+    "transportation": 410,
+    "internet": 57,
+    "water_sewer": 90,
+    "electricity": 50,
+    "gas": 70,
+    "subscriptions": 43,
+    "phone": 30
+  },
+  "flexible expenses": {
+    "groceries": [200, 400],
+    "dates": [70, 140],
+    "miscellaneous": [200, 400],
+    "ministry": [40, 80]
+  },
+  "monthly miscellaneous": {
+    "tuition": 1755,
+    "getaway": 300,
+    "navs": 150,
+    "baby": 300
+  },
+  "paradigms": {
+    "savage savings": {
+      "leftover_min": 1020,
+      "savings": 0.5
+    }
+  }
+
+}
