@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 
-class BudgetFlex:
+class MonthlyBudget:
 
-    def __init__(self):
+    def __init__(self, filepath: str):
         self.paradigm = "savage savings"
-        self.file = open("config.json")
+        self.file = open(filepath)
         self.config = json.load(self.file)
 
         self.income = float(self.config['income'])
@@ -108,7 +108,7 @@ class BudgetFlex:
 
 
 if __name__ == "__main__":
-    budget = BudgetFlex()
+    budget = MonthlyBudget("data/config.json")
     fixed_exp = budget.fixed_expenses
     month = budget.month_miscellaneous
     print(budget.calculate_savings())
