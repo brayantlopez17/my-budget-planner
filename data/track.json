@@ -1,62 +1,62 @@
-{
-  "entry 1": {
+[
+  {
     "date": "apr 1",
     "item": "shell",
     "amount": 62.87,
     "category": "gas"
   },
-  "entry 2": {
+  {
     "date": "apr 1",
     "item": "stonefruit",
     "amount": 13.22,
     "category": "dates"
   },
-  "entry 3": {
+  {
     "date": "apr 1",
     "item": "aldi",
     "amount": 69.35,
     "category": "groceries"
   },
-  "entry 4": {
+  {
     "date": "apr 2",
     "item": "Save a lot",
     "amount": 9.16,
     "category": "groceries"
   },
-  "entry 5": {
+  {
     "date": "apr 2",
     "item": "IGA",
     "amount": 5.78,
     "category": "groceries"
   },
-  "entry 6": {
+  {
     "date": "apr 2",
     "item": "Culture house",
     "amount": 5.95,
     "category": "ministry"
   },
-  "entry 7": {
+  {
     "date": "apr 3",
     "item": "mocha house",
     "amount": 10.00,
     "category": "dates"
   },
-  "entry 8": {
+  {
     "date": "apr 3",
     "item": "Target - Kayla",
     "amount": 44.06,
     "category": "miscellaneous"
   },
-  "entry 9": {
+  {
     "date": "apr 3",
     "item": "snack",
     "amount": 2.50,
     "category": "miscellaneous"
   },
-  "entry 10": {
+  {
     "date": "apr 5",
     "item": "tax 29",
     "amount": 29.00,
     "category": "miscellaneous"
   }
-}
+]

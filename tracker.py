@@ -1,8 +1,7 @@
 import datetime
-
+import json
 import pandas as pd
 import uuid
-from budget_calculator import BudgetFlex
 
 
 class Entry:
@@ -16,7 +15,8 @@ class Entry:
 
 class Ledger:
     def __init__(self):
-        self.year = datetime.date.today().year
+        self.date = datetime.date.today()
+        self.year = self.date.year
         self.entries = []
 
         self._df = pd.DataFrame
@@ -31,14 +31,22 @@ class Ledger:
         self._df['UUID'] = [str(uuid.uuid4()) for _ in range(len(self._df))]
         self._convert_datatypes()
 
+    def read_json(self, json_obj):
+        self._df = pd.DataFrame(json_obj)
+        self._df.dropna(how="all", inplace=True)
+        self._df.dropna(axis=1, how="all", inplace=True)
+        if 'UUID' not in self._df.columns:
+            self._df['UUID'] = [str(uuid.uuid4()) for _ in range(len(self._df))]
+        self._convert_datatypes()
+
     def _convert_datatypes(self):
         self._df['Date'] = self._df['Date'] + f' {self.year}'
         self._df['Date'] = pd.to_datetime(self._df['Date'], format='%b %d %Y')
         self._df['Amount'] = self._df['Amount'].replace('[\$,]', '', regex=True).astype(float)
         self._df['Category'] = self._df['Category'].astype('category')
 
-    def to_json(self):
-        return self._df.to_json(orient="records")
+    # def to_json(self):
+    #     return self._df.to_json(orient="records")
 
     def categories(self):
         return list(set(self._df['Category']))
@@ -54,11 +62,15 @@ class Ledger:
     def df(self):
         return self._df
 
+    def to_json(self):
+        self._df.to_json(f"{self.date}_tracker.json", orient="records")
+
 
 
 if __name__ == "__main__":
     ledger = Ledger()
     ledger.read_csv("data/expense_tracker.csv")
-    print(ledger.category_spent())
+    print(ledger.df)
+    ledger.to_json()
 
 
