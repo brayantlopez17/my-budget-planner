@@ -14,12 +14,13 @@ class Entry:
 
 
 class Ledger:
-    def __init__(self):
+    def __init__(self, request: json):
+        json_obj = json.load(request)
         self.date = datetime.date.today()
         self.year = self.date.year
         self.entries = []
 
-        self._df = pd.DataFrame
+        self._df = pd.DataFrame(json_obj)
 
     def add_entry(self, entry: Entry):
         self.entries.append(entry)
@@ -68,9 +69,10 @@ class Ledger:
 
 
 if __name__ == "__main__":
-    ledger = Ledger()
+    json_file = "data/2024-05-17_tracker.json"
+    file = open(json_file)
+    ledger = Ledger(file)
     ledger.read_csv("data/expense_tracker.csv")
-    print(ledger.df)
-    ledger.to_json()
+    print(ledger.category_spent())
 
 

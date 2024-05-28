@@ -13,14 +13,14 @@
     "phone": 30
   },
   "flexible expenses": {
-    "Groceries": [200, 400],
-    "Dates": [70, 140],
-    "Miscellaneous": [200, 400],
-    "Ministry": [40, 80],
-    "Gas": [200, 250],
-    "Getaway": [200, 300],
-    "Navs weekend": [150, 200],
-    "Baby": [200, 300]
+    "groceries": [200, 400],
+    "dates": [70, 140],
+    "miscellaneous": [200, 400],
+    "ministry": [40, 80],
+    "gas": [200, 250],
+    "getaway": [200, 300],
+    "navs": [150, 200],
+    "baby": [200, 300]
   },
   "paradigms": {
     "savage savings": {

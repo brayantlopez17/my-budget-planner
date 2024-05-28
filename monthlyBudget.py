@@ -152,6 +152,6 @@ class Budget:
 if __name__ == "__main__":
     json_file = open("data/apr24_budget.json")
     budget = Budget(json_file)
-    print(max(budget.flex_expenses['Groceries']))
+    print(budget.flex_expenses)
     budget.print_summary()
 
